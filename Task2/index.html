@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="board.css" />
+    <title>Community</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="menu-block" id="menu-left">
+        <a href="#" id="logo"
+          ><img class="menu-icon" src="assets/logo.png" alt="logo"
+        /></a>
+      </div>
+      <div class="menu-block" id="menu-center">
+        <a href="#" class="menu-optoin"
+          ><img class="menu-icon" src="assets/home.png" alt="home"
+        /></a>
+        <div class="divider"></div>
+        <a href="#" class="menu-optoin"
+          ><img class="menu-icon" src="assets/folder.png" alt="browse"
+        /></a>
+        <div class="divider"></div>
+        <a href="#" class="menu-optoin"
+          ><img class="menu-icon" src="assets/feed.png" alt="feed"
+        /></a>
+        <div class="divider"></div>
+        <a href="#" class="menu-optoin"
+          ><img class="menu-icon" src="assets/user.png" alt="user"
+        /></a>
+      </div>
+      <div class="menu-block" id="menu-right">
+        <input type="file" id="upload" hidden />
+        <label id="upload-label" for="upload"
+          ><img id="upload-icon" src="assets/upload.png" alt="upload"
+        /></label>
+      </div>
+    </nav>
+    <div class="board">
+      <div class="board-overlay"></div>
+      <div class="board-profile">
+        <div class="profile-navigation">
+          <img
+            class="board-profile-icon"
+            src="assets/user-Icon.png"
+            alt="user"
+          />
+          <img class="board-profile-icon" src="assets/close.png" alt="close" />
+        </div>
+        <div class="user-profile">
+          <img class="user-avatar" src="assets/profile_photo.png" alt="user" />
+          <p id="name">Justin Pervorse</p>
+          <p id="description">illustrator and Photographer from Atlanta, GA</p>
+        </div>
+        <div id="horizontal-divider"></div>
+        <div class="photo-navigation">
+          <input type="file" id="contribute" hidden />
+          <label id="contribute-btn" for="contribute">
+            + &nbsp;&nbsp;CONTRIBUTE</label
+          >
+          <label id="tags-btn" for="">&#60;&nbsp;&nbsp; &#62;</label>
+        </div>
+        <div class="photo-galery">
+          <div class="galery-row">
+            <img class="galery-unit" src="assets/alb1.jpg" alt="" />
+            <img class="galery-unit" src="assets/alb2.jpg" alt="" />
+            <img class="galery-unit" src="assets/alb3.jpg" alt="" />
+          </div>
+          <div class="galery-row">
+            <img class="galery-unit" src="assets/alb4.jpg" alt="" />
+            <img class="galery-unit" src="assets/alb5.jpg" alt="" />
+            <img class="galery-unit" src="assets/alb6.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="board-info">
+        <p style="font-size: 50px;">Hong Kong</p>
+        <div class="mini-user-info">
+          <img class="user-avatar-mini" src="assets/profile_photo.png" alt="user" />
+          <p>by Justin Pervorse • 25th jan, 2014</p>
+        </div>
+        <div class="mini-divider"></div>
+        <div class="statistic">
+          <img class="stat-comp" src="assets/like.png" alt="like" />
+          <p class="likes" >640</p>
+          <img class="stat-comp" src="assets/comment.png" alt="comm" />
+          <p>302</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
