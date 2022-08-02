@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="header.css" />
-    <link rel="stylesheet" href="board.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/board.css" />
+    <link rel="stylesheet" href="styles/main.css" />
     <title>Community</title>
   </head>
   <body>
@@ -78,19 +79,169 @@
         </div>
       </div>
       <div class="board-info">
-        <p style="font-size: 50px;">Hong Kong</p>
+        <p style="font-size: 50px">Hong Kong</p>
         <div class="mini-user-info">
-          <img class="user-avatar-mini" src="assets/profile_photo.png" alt="user" />
+          <img
+            class="user-avatar-mini"
+            src="assets/profile_photo.png"
+            alt="user"
+          />
           <p>by Justin Pervorse • 25th jan, 2014</p>
         </div>
         <div class="mini-divider"></div>
         <div class="statistic">
           <img class="stat-comp" src="assets/like.png" alt="like" />
-          <p class="likes" >640</p>
+          <p class="likes">640</p>
           <img class="stat-comp" src="assets/comment.png" alt="comm" />
           <p>302</p>
         </div>
       </div>
     </div>
+    <main>
+      <div class="feed">
+        <div class="feed-navigation">
+          <div class="camera">
+            <img class="camera-icon" src="assets/photo.png" alt="photo" />
+            <p>524</p>
+            <div class="divider"></div>
+            <img class="camera-icon" src="assets/camera.png" alt="camera" />
+            <p>102</p>
+          </div>
+          <div class="data">
+            <input id="PhotoData" type="month" value="2022-08" />
+          </div>
+        </div>
+        <div class="feed-divider"></div>
+        <div class="newsfeed">
+          <div id="block1" class="feed-block">
+            <div class="feed-block-overlay">
+              <div class="feed-block-info">
+                <div class="feed-block-statistic">
+                  <img class="stat-icon" src="assets/like.png" alt="like" />
+                  <p>99</p>
+                  <img class="stat-icon" src="assets/comment.png" alt="com" />
+                  <p>68</p>
+                </div>
+                <div class="feed-block-statistic">
+                  <img
+                    class="feed-avatar-mini"
+                    src="assets/user1.png"
+                    alt="com"
+                  />
+                </div>
+              </div>
+              <p class="feed-block-description">Dog & Man</p>
+            </div>
+          </div>
+          <div id="block2" class="feed-block">
+            <div class="feed-block-overlay">
+              <div class="feed-block-info">
+                <div class="feed-block-statistic">
+                  <img class="stat-icon" src="assets/like.png" alt="like" />
+                  <p>74</p>
+                  <img class="stat-icon" src="assets/comment.png" alt="com" />
+                  <p>55</p>
+                </div>
+                <div class="feed-block-statistic">
+                  <img
+                    class="feed-avatar-mini"
+                    src="assets/user4.png"
+                    alt="com"
+                  />
+                </div>
+              </div>
+              <p class="feed-block-description">Autumn Volcano</p>
+            </div>
+          </div>
+          <div id="block3" class="feed-block">
+            <div class="feed-block-overlay">
+              <div class="feed-block-info">
+                <div class="feed-block-statistic">
+                  <img class="stat-icon" src="assets/like.png" alt="like" />
+                  <p>46</p>
+                  <img class="stat-icon" src="assets/comment.png" alt="com" />
+                  <p>23</p>
+                </div>
+                <div class="feed-block-statistic">
+                  <img
+                    class="feed-avatar-mini"
+                    src="assets/user2.png"
+                    alt="com"
+                  />
+                </div>
+              </div>
+              <p class="feed-block-description">Retro Car</p>
+            </div>
+          </div>
+          <div id="block4" class="feed-block">
+            <div class="feed-block-overlay">
+              <div class="feed-block-info">
+                <div class="feed-block-statistic">
+                  <img class="stat-icon" src="assets/like.png" alt="like" />
+                  <p>59</p>
+                  <img class="stat-icon" src="assets/comment.png" alt="com" />
+                  <p>43</p>
+                </div>
+                <div class="feed-block-statistic">
+                  <img
+                    class="feed-avatar-mini"
+                    src="assets/user6.png"
+                    alt="com"
+                  />
+                </div>
+              </div>
+              <p class="feed-block-description">Man & Nature</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside class="userlist">
+        <div class="userlist-info">
+          <p>
+            Landscape&nbsp; &nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </p>
+          <p id="user-landscape-num">32</p>
+        </div>
+        <div id="userlist-users">
+          <div class="user">
+            <img class="user-avatar-mini" src="assets/user1.png" alt="user" />
+            <p class="user-name">Gustav Butlex</p>
+          </div>
+          <div class="user">
+            <img class="user-avatar-mini" src="assets/user4.png" alt="user" />
+            <p class="user-name">Erika van der Bent</p>
+          </div>
+          <div class="user">
+            <img class="user-avatar-mini" src="assets/user2.png" alt="user" />
+            <p class="user-name">Dann Petty</p>
+          </div>
+          <div class="feed-divider"></div>
+          <div class="user">
+            <img class="user-avatar-mini" src="assets/user5.png" alt="user" />
+            <p class="user-name">Manouk Berg</p>
+          </div>
+          <div class="user">
+            <img class="user-avatar-mini" src="assets/user3.png" alt="user" />
+            <p class="user-name">Kerem Suer</p>
+          </div>
+          <div class="user">
+            <img class="user-avatar-mini" src="assets/user6.png" alt="user" />
+            <p class="user-name">Jenny Shen</p>
+          </div>
+          <div class="user">
+            <img
+              class="user-avatar-mini"
+              src="assets/profile_photo.png"
+              alt="user"
+            />
+            <p class="user-name">Maykel Loomans</p>
+          </div>
+          <div id="user-search">
+            <input type="text" placeholder="Search" id="search-box" />
+          </div>
+        </div>
+      </aside>
+    </main>
   </body>
 </html>
