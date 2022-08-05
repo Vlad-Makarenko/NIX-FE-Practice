@@ -7,13 +7,13 @@ const getCanvas = (canvasId) => {
   return canvas;
 };
 
-function drawSquare(x = 0, y = 0, length = 50, color = "yellow", canvasId) {
+function drawRectangle(x = 0, y = 0, width = 100, height = 50, color = "yellow", canvasId) {
   this.canvas = getCanvas(canvasId);
-  this.canvas.width = length;
+  this.canvas.width = width;
   this.canvas.height = length;
   let ctx = this.canvas.getContext("2d");
   ctx.fillStyle = color;
-  ctx.fillRect(x, y, length, length);
+  ctx.fillRect(x, y, width, height);
 }
 
 function drawTriangle(x = 50, y = 0, length = 100, color = "yellow", canvasId) {
