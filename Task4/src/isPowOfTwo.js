@@ -1,0 +1,1 @@
+const isPowOfTwo = num => num > 0 && (num & (num - 1)) == 0
