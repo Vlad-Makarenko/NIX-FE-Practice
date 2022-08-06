@@ -4,7 +4,8 @@
  * @param {String} needle
  */
 const findWord = (str, needle) => {
-  const splitedStr = str.split(" ").map((word) => {
+  let words = str.match(/[a-zA-Zа-яА-ЯіІїЇєЄ]*\S/g) || [];
+  const splitedStr = words.map((word) => {
     const foundWords = word.match(needle) || [];
     if (foundWords.length) {
       return word;
@@ -13,4 +14,3 @@ const findWord = (str, needle) => {
   const result = splitedStr.filter((word) => word);
   return result[0];
 };
-
