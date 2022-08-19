@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Перевірка форми перед відправкою</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+      form div input {
+        border-style: solid;
+        border-color: #999;
+      }
+      a {
+        background: silver;
+        color: black;
+        border: 3px groove silver;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      div.button {
+        margin-top: 10px;
+      }
+    </style>
+    <script type="text/javascript">
+      function checkForm() {
+        const inputs = [...document.querySelectorAll("#myForm input")];
+        let isAlert = false;
+        for (let item of inputs) {
+          if (!item.value) {
+            item.style.border = "1px solid red";
+            setTimeout(() => {
+              item.style.border = "";
+            }, 3000);
+            isAlert = true;
+          }
+        }
+        if (isAlert) {
+          alert("All fields must be filled");
+          isAlert = false;
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Перевірка форми перед відправкою</h1>
+    <form id="myForm" name="myForm" action="">
+      <fieldset>
+        <legend>Форма</legend>
+        <div>
+          <label for="txt1">Поле 1</label>
+          <input type="text" name="p1" id="txt1" />
+        </div>
+        <div>
+          <label for="txt2">Поле 2</label>
+          <input type="text" name="p2" id="txt2" />
+        </div>
+        <div>
+          <label for="txt3">Поле 3</label>
+          <input type="text" name="p3" id="txt3" />
+        </div>
+        <div>
+          <label for="txt4">Поле 4</label>
+          <input type="text" name="p4" id="txt4" />
+        </div>
+        <div>
+          <label for="txt5">Поле 5</label>
+          <input type="text" name="p5" id="txt5" />
+        </div>
+        <div class="button">
+          <a href="javascript:checkForm()">Передати форму</a>
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>

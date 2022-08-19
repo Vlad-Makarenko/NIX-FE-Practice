@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Таблиця</title>
+    <style type="text/css">
+      td {
+        padding: 10px;
+        border: 1px solid #369;
+      }
+    </style>
+    <script type="text/javascript">
+      var cell = 10;
+      var row = 10;
+
+      function createDOM() {
+        const placeholder = document.getElementById("d");
+        const ownTable = document.createElement("table");
+
+        for (let i = 0; i < row; i++) {
+          const TRow = document.createElement("tr");
+          for (let j = 0; j < cell; j++) {
+            const cell = document.createElement("td");
+            cell.innerHTML = "Table Cell";
+            TRow.appendChild(cell);
+          }
+          ownTable.appendChild(TRow);
+        }
+        placeholder.appendChild(ownTable);
+      }
+    </script>
+  </head>
+  <body>
+    <a href="javascript:createDOM();">Створити таблицю за допомогою методів DOM</a
+    ><br />
+    <div id="d"></div>
+  </body>
+</html>

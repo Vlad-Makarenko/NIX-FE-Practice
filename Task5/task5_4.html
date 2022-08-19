@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Структура DOM</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+      function showChildNodes(node, doc) {
+        console.log(node);
+        if (node?.childNodes?.length) {
+          for (let item of node.childNodes) {
+            if (item.nodeType == Node.TEXT_NODE) {
+              doc.write(item.data + "<br>");
+            } else {
+              doc.write(`${item.nodeName}...<br>`);
+            }
+            showChildNodes(item, doc);
+          }
+        }
+      }
+
+      function showDOM() {
+        const wnd = window.open();
+        wnd?.document.write(
+          `<html lang="en">
+            <head>
+              <title>Структура DOM</title>
+            </head>
+            <body>
+            \x3C/body>
+          </html>`
+        );
+        showChildNodes(document.documentElement, wnd.document);
+        // showChildNodes(document.body, wnd.document);
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Структура DOM</h1>
+    <div>
+      <h2>Виведення структури DOM</h2>
+      <p>
+        Цей код відкриває нове вікно та виводить у нього структуру поточного
+         документа
+      </p>
+    </div>
+    <div>
+      <h2>Запуск коду</h2>
+      <p>ДДля запуску коду клацніть <a href="javascript:showDOM()">сюди</a></p>
+    </div>
+  </body>
+</html>

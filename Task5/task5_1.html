@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Відкриття нових вікон та запис змісту</title>
+    <style type="text/css">
+      html {
+        background: #fff;
+        font: 16px calibri, sans-serif;
+        cursor: default;
+      }
+      p {
+        float: left;
+        margin: 0 10px 0 0;
+        padding: 15px;
+      }
+      .p1 {
+        background: #ccf;
+      }
+      .p2 {
+        background: #fcc;
+      }
+      .p3 {
+        background: #cfc;
+      }
+    </style>
+    <script type="text/javascript">
+      let name = "Це я його відкрив";
+      let wnd;
+      function openWnd() {
+        const width = 300;
+        const height = 200;
+        const left = screen.width / 2 - width / 2;
+        const top = screen.height / 2 - height / 2;
+        wnd = window.open(
+          "about:blank",
+          name,
+          `width=${width}, height=${height}, top=${top}, left=${left}`
+        );
+        wnd.focus();
+      }
+
+      function writeToDocument() {
+        wnd?.document.write(
+          `<html lang="en">
+            <head>
+              <title>${name}</title>
+              <style type="text/css">
+                html {
+                  background: #369;
+                  color: #fff;
+                  font: 16px calibri, sans-serif;
+                }
+              </style>
+              <script type="text/javascript">
+                alert(window.opener.name)
+              \x3C/script>
+            </head>
+            <body>
+              <p>Текст парагарафа</p>
+            \x3C/body>
+          </html>`
+        );
+        wnd?.focus();
+
+      }
+
+      function closeWnd() {
+        if (wnd) {
+          wnd.close();
+          wnd = null;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <p class="p1"><a href="javascript:openWnd();">Відкрити вікно</a></p>
+    <p class="p3"><a href="javascript:writeToDocument();">Заповнити вікно</a></p>
+    <p class="p2"><a href="javascript:closeWnd();">Закрити вікно</a></p>
+  </body>
+</html>
