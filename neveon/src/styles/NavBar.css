@@ -1,0 +1,32 @@
+.navIco {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.navText {
+ display: flex;
+ flex-direction: column;
+}
+
+.navBarItem{
+  display: flex;
+  align-items: center;
+  border-left: 1px solid black;
+  padding: 12px 33px 12px 33px;
+}
+
+.Devider{
+  height: 100%;
+  border-left: 1px solid black;
+}
+
+.navBarItemText{
+  font-size: 15px;
+}
+
+.test123{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 0;
+}
