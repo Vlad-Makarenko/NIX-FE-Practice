@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Практична робота 4</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <script>
+      /** ЗАВДАННЯ 1
+	    - Прив'яжіть подію "mouseenter" до елемента <div>, при якій
+	      - колір фону елемента <div> змінюється на жовтий
+	      - у третього елемента списку колір фону змінюється на червоний
+	    */
+      $(() => {
+        $("div").on("mouseenter", () => {
+          $("div").css("background-color", "yellow");
+          $("div ul li").eq(2).css("background-color", "red");
+        });
+      });
+      /** ЗАВДАННЯ 2
+	      - Прив'яжіть подію "click" до елемента <div>, при якій список <ul> ПЛАВНО зникає
+	    */
+      $(() => {
+        $("div").on("click", () => {
+          $("ul").animate(
+            {
+              opacity: "0",
+            },
+            500
+          );
+        });
+      });
+      /** ЗАВДАННЯ 3
+      - Прив'яжіть подію "mouseleave" до елемента <div>, при якій
+      - Список <ul> ПЛАВНО з'являється
+      - кольори елемента <div> та третього елемента списку повертаються до початкового стану
+      */
+      $(() => {
+        $("div").on("mouseleave", () => {
+          $("ul").animate(
+            {
+              opacity: "1",
+            },
+            500
+          );
+          $("div").css("background-color", "");
+          $("div ul li").eq(2).css("background-color", "");
+        });
+      });
+    </script>
+    <style>
+      .mylist {
+      }
+      .container {
+        border: 1px solid green;
+        height: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Працюємо з ефектами jQuery</h1>
+    <div id="container" class="container">
+      <ul class="mylist">
+        <li>Позиція 1</li>
+        <li>Позиція 2</li>
+        <li>Позиція 3</li>
+      </ul>
+    </div>
+  </body>
+</html>

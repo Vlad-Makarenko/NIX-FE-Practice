@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Лабораторна робота 2</title>
+
+    <style>
+      body {
+        font-family: serif;
+        color: maroon;
+        background: silver;
+        font-size: 14px;
+      }
+      p {
+        padding: 5px;
+      }
+      #container {
+        margin: 0 auto;
+        text-align: left;
+        width: 650px;
+      }
+      #header {
+        height: 60px;
+        color: #800000;
+      }
+      #header h1 {
+        padding: 0;
+        margin: 0;
+      }
+      #content {
+        background-color: #eee;
+        padding: 0 15px 10px 15px;
+      }
+      #footer {
+        background-color: #eee;
+        padding: 15px;
+        clear: both;
+      }
+      h2 {
+        border-bottom: 2px dotted #800000;
+        color: #800000;
+        padding-top: 10px;
+        margin-top: 0;
+      }
+      table {
+        border-collapse: collapse;
+        font-size: 12px;
+        margin: 0 20px 20px 20px;
+        width: 500px;
+      }
+      th {
+        background-color: white;
+        color: maroon;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: left;
+        padding: 3px 8px;
+      }
+      td {
+        padding: 6px;
+      }
+      table tbody tr {
+        cursor: pointer;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+      /** ЗАВДАННЯ 1
+      - У <div id="news"> приховати всі елементи <span> з класом "hidden"
+      - При натисканні лівої кнопки мишки на елемент <p> приховані елементи <span> мають відображатися.
+      - При повторному натисканні – зникати.
+      */
+      $(function () {
+        $("#news .hidden").css("display", "none");
+        $("p").on("click", () => {
+          $("#news .hidden").toggle();
+        });
+      });
+
+      /** ЗАВДАННЯ 2
+      - У таблиці з id="books" при наведенні курсору мишки на елемент <tr> повинні:
+        - змінюватися колір фону даного рядка таблиці
+        - текст у колонці "Технологія" виділятися напівжирним
+      */
+      $(function () {
+        $("#books tbody tr").on("mouseenter", (e) => {
+          $(e.currentTarget).css({
+            "background-color": "#8e0000",
+            color: "white",
+          });
+          $(e.currentTarget).children(":first").css("font-weight", "600");
+        });
+        $("#books tbody tr").on("mouseleave", (e) => {
+          $(e.currentTarget).css({
+            "background-color": "#eee",
+            color: "black",
+          });
+          $(e.currentTarget).children(":first").css("font-weight", "normal");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <h1>Сучасні технології та навчальні матеріали</h1>
+      </div>
+      <div id="content">
+        <h2>Ласкаво просимо на сторінку нашого каталогу!</h2>
+        <p id="intro">
+          В інтернеті повно списків «Найкращих книг з програмування за все час»
+          і багато хто з них радить різні (не завжди гарні) книги. Один
+          Програміст вирішив дізнатися, які книги рекомендують найчастіше. Для
+          цього він узяв усі ці списки, проаналізував їх і виклав свою
+          мета-підбірку з 25 книг. Ділимося їй з вами.<br />
+        </p>
+        <p id="disclaimer">
+          Попередження! Усі книги, для яких є переклад, ми привели російською
+          мовою. Оригінальний список можна переглянути
+          <a
+            href="https://www.best-books.dev/list/best-programming-books#25-most-recommended-programming-books-of-all-time"
+            >тут</a
+          >.
+        </p>
+
+        <div id="news">
+          <h2>Останні новини</h2>
+          <p>
+            Безпрецедентна пропозиція «Супер магазину»: замовляйте дві книги та
+            отримайте знижку на третю! Знати б яку?<br />
+            <span class="hidden">Цілих 20%!</span>
+          </p>
+          <p>
+            Вітаємо із Днем працівника органів! Але яких?<br />
+            <span class="hidden">Слідчих!</span>
+          </p>
+          <p>Знижка на книгу <span>якась назва</span></p>
+        </div>
+        <div>
+          <h2 class="heading">Наші книги</h2>
+          <table class="data" id="books">
+            <thead>
+              <tr>
+                <th>Технологія</th>
+                <th>Назва</th>
+                <th>Автори</th>
+                <th>Рік</th>
+                <th>Ціна</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>XML</td>
+                <td>
+                  XML. Никаких тайн и секретов! (<a class="doc" href="#"
+                    >посилання</a
+                  >)
+                </td>
+                <td>Джим Кох, Кен Девідсон</td>
+                <td>2012</td>
+                <td>2 000</td>
+              </tr>
+              <tr>
+                <td>AJAX</td>
+                <td>Ajax в действии (<a class="doc" href="#">посилання</a>)</td>
+                <td>Дейв Крейн, Ерік Паскарелло, Даррен Джеймс</td>
+                <td>2006</td>
+                <td>3 000</td>
+              </tr>
+              <tr>
+                <td>PHP</td>
+                <td>
+                  Изучаем PHP 7. Руководство по созданию интерактивных
+                  веб-сайтов (<a class="doc" href="#">посилання</a>)
+                </td>
+                <td>Девід Скляр</td>
+                <td>2017</td>
+                <td>1 000</td>
+              </tr>
+              <tr>
+                <td>Java</td>
+                <td>
+                  Эффективная Java (<a class="doc" href="#">посилання</a>)
+                </td>
+                <td>Джошуа Блох</td>
+                <td>2019</td>
+                <td>3 000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="comment">
+          <h2>Ваш коментар</h2>
+          <form id="form" onsubmit="return false">
+            Ім'я:<br />
+            <input type="text" /><br />
+            Коментар:<br />
+            <textarea rows="5" cols="30" name="comment"></textarea><br />
+            <input type="button" value="Надіслати" />
+          </form>
+        </div>
+
+        <h2>Інформація</h2>
+        <p id="info">
+          В асортименті понад 1000 навчальних матеріалів для фахівців та
+          початківців: технічні книги, енциклопедії та ін.
+        </p>
+      </div>
+
+      <div id="footer">
+        <p>&copy; Усі права зарезервовані, 2020 Супер книги</p>
+      </div>
+    </div>
+  </body>
+</html>
