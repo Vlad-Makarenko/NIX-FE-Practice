@@ -1,6 +1,4 @@
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import {Navbar, Button} from "react-bootstrap";
+import { Container, Navbar, Nav, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
 import logo from "../assets/logo.png";
@@ -13,7 +11,7 @@ export const Header = () => {
     <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand>
-          <NavLink to="/category">
+          <NavLink to="/">
             <img src={logo} height="20" alt="Logo" />
           </NavLink>
         </Navbar.Brand>
@@ -41,12 +39,11 @@ export const Header = () => {
               <span style={{ fontSize: "13px" }}>Пн-Пт 09:00 - 21:00</span>
             </Nav.Item>
             <Nav.Item className="navIco">
-                <Button variant={"outline-dark"}>Залишити заявку</Button>
+              <Button variant={"outline-dark"}>Залишити заявку</Button>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    
   );
 };

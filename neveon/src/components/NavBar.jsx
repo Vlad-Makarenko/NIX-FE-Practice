@@ -1,12 +1,10 @@
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import { Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Navbar, NavDropdown, Nav } from "react-bootstrap";
 
 import "../styles/NavBar.css";
 
 export const NavBar = () => {
   return (
-    <Navbar bg="transparent" expand="lg" className="test123">
+    <Navbar bg="transparent" expand="lg" className="navCont">
       <Container>
         <Navbar.Toggle />
 

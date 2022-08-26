@@ -1,0 +1,20 @@
+.itemCard {
+  width: 30%;
+  margin-bottom: 3%;
+  border: 0;
+  text-align: center;
+}
+
+.itemLink {
+  text-decoration: none;
+  color: black;
+}
+
+.itemLink:hover {
+  color: #f39b14;
+}
+
+.advantagesImg {
+  margin-top: 5%;
+  width: 150px;
+}

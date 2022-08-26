@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { createContext } from "react";
-import { Crumbs } from "./contexts/CrumbContext";
+import { Crumbs } from "./store/CrumbStore";
+import { Category } from "./store/CategoryStore";
 
 export const Context = createContext(null);
 
@@ -12,6 +13,7 @@ root.render(
     <Context.Provider
       value={{
         BreadCrumbs: new Crumbs(),
+        Categories: new Category(),
       }}
     >
       <App />

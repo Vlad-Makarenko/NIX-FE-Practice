@@ -5,27 +5,28 @@
 }
 
 .navText {
- display: flex;
- flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.navBarItem{
+.navBarItem {
   display: flex;
   align-items: center;
   border-left: 1px solid black;
   padding: 12px 33px 12px 33px;
+  cursor: pointer;
 }
 
-.Devider{
+.Devider {
   height: 100%;
   border-left: 1px solid black;
 }
 
-.navBarItemText{
+.navBarItemText {
   font-size: 15px;
 }
 
-.test123{
+.navCont {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   padding: 0;

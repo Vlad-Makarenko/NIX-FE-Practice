@@ -15,6 +15,10 @@ export class Crumbs {
     this._crumbs = crumbs;
   }
 
+  setCrumb(crumb, index) {
+    this._crumbs[index] = crumb;
+  }
+
   get crumbs() {
     return this._crumbs;
   }
