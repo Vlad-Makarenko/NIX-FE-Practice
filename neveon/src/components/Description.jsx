@@ -12,7 +12,10 @@ export const Description = () => {
           alt="description}"
           style={{ width: "40%", float: "left", margin: "1%" }}
         />
-        <h2>Опис категорії</h2>
+        <span style={{ fontSize: "26px", fontWeight: "650" }}>
+          Опис категорії
+        </span>
+        <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;У своєму прагненні підвищити якість життя
         вони забувають, що існуюча теорія не дає нам іншого вибору, крім
         визначення напрямків прогресивного розвитку. Будучи лише частиною

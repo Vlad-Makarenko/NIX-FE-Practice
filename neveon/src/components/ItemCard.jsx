@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import cardImg1 from "../assets/item1.png";
 import cardImg2 from "../assets/item2.png";
@@ -12,6 +12,8 @@ import "../styles/Item.css";
 
 export const ItemCard = ({ item }) => {
   const [cardImg, setCardImg] = useState(cardImg1);
+  const history = useNavigate();
+
   useEffect(() => {
     switch (item.id) {
       case 1:
@@ -37,14 +39,21 @@ export const ItemCard = ({ item }) => {
     }
   }, [item.id]);
 
+  const clickItemHandler = () => {
+    history(`/category/${item.id}`);
+  };
+
   return (
     <Card className="d-flex flex-column justify-content-center itemCard">
-      <Card.Img variant="top" src={cardImg} />
+      <Card.Img
+        onClick={clickItemHandler}
+        className="itemLink"
+        variant="top"
+        src={cardImg}
+      />
       <Card.Body>
-        <Card.Title>
-          <NavLink to={`/category/${item.id}`} className="itemLink">
-            {item.name}
-          </NavLink>
+        <Card.Title onClick={clickItemHandler} className="itemLink">
+          {item.name}
         </Card.Title>
         <Card.Text>{item.description}</Card.Text>
         <Card.Title>Ціна від {item.price}</Card.Title>

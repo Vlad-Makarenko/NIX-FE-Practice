@@ -64,6 +64,7 @@ export class Category {
     ];
     this._selectedCategory = {};
     this._selectedItems = this._items;
+    this._selectedItem = {};
     makeAutoObservable(this);
   }
 
@@ -73,6 +74,10 @@ export class Category {
 
   setItems(items) {
     this._items = items;
+  }
+
+  setSelectedItem(item) {
+    this._selectedItem = item;
   }
 
   setSelectedCategory(selectedCategory, changeItems = true) {
@@ -96,5 +101,9 @@ export class Category {
 
   get selectedItems() {
     return this._selectedItems;
+  }
+
+  get selectedItem() {
+    return this._selectedItem;
   }
 }
