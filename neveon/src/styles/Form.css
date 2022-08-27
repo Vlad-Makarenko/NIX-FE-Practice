@@ -1,0 +1,25 @@
+.FormInput {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 3%;
+  color: white;
+}
+
+.formText {
+  color: white;
+}
+
+.rootLink {
+  text-decoration: none;
+  color: #f39b14;
+}
+
+.rootLink:hover {
+  color: #ffbe5d;
+}
+
+.PhoneInput input {
+  border: 0;
+  background-color: transparent;
+  color: white;
+}

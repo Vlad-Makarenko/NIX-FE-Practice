@@ -37,24 +37,25 @@ export const ImgSlider = () => {
         >
           &#8249;
         </span>
-        <img
-          onClick={() => setCurrentImg(Img1)}
-          style={{ width: "25%", marginLeft: "1%" }}
-          src={Img1}
-          alt="First slide"
-        />
-        <img
-          onClick={() => setCurrentImg(Img2)}
-          style={{ width: "25%", marginLeft: "1%" }}
-          src={Img2}
-          alt="First slide"
-        />
-        <img
-          onClick={() => setCurrentImg(Img3)}
-          style={{ width: "25%", marginLeft: "1%" }}
-          src={Img3}
-          alt="First slide"
-        />
+        {sliderImgs.map((sliderImage, idx) => {
+          return (
+            <img
+              key={idx}
+              onClick={() => setCurrentImg(sliderImage)}
+              style={
+                sliderImage === currentImg
+                  ? {
+                      width: "25%",
+                      marginLeft: "1%",
+                      border: "2px solid #f39b14",
+                    }
+                  : { width: "25%", marginLeft: "1%" }
+              }
+              src={sliderImage}
+              alt="slide"
+            />
+          );
+        })}
         <span
           onClick={() => carouselBtnHandler(true)}
           className="round carouselBtn"

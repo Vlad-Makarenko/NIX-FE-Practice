@@ -40,6 +40,7 @@ export const ItemCard = ({ item }) => {
   }, [item.id]);
 
   const clickItemHandler = () => {
+    window.scrollTo(0, 0);
     history(`/category/${item.id}`);
   };
 

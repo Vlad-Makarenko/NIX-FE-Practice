@@ -64,6 +64,7 @@ export class Category {
     ];
     this._selectedCategory = {};
     this._selectedItems = this._items;
+    this._recomendedItems = this._items;
     this._selectedItem = {};
     makeAutoObservable(this);
   }
@@ -87,6 +88,10 @@ export class Category {
       : this._items;
   }
 
+  setRecomendedItems(recomendedItems) {
+    this._recomendedItems = recomendedItems;
+  }
+
   get categories() {
     return this._categories;
   }
@@ -105,5 +110,9 @@ export class Category {
 
   get selectedItem() {
     return this._selectedItem;
+  }
+
+  get recomendedItems() {
+    return this._recomendedItems;
   }
 }
