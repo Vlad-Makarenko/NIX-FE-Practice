@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
+import { useParams } from "react-router-dom";
+import { chooseImg } from "../utils/chooseImg";
 
 import Img1 from "../assets/item1.png";
 import Img2 from "../assets/item4.png";
@@ -8,9 +10,15 @@ import Img3 from "../assets/item5.png";
 import "../styles/Item.css";
 
 export const ImgSlider = () => {
-  const [currentImg, setCurrentImg] = useState(Img1);
+  const { id } = useParams();
+
+  const [currentImg, setCurrentImg] = useState();
   const [sliderImgs] = useState([Img1, Img2, Img3]);
   const [currenIdx, setCurrenIdx] = useState(0);
+
+  useEffect(() => {
+    chooseImg(Number(id), setCurrentImg);
+  }, [id]);
 
   const carouselBtnHandler = (next) => {
     let tempIdx = next ? currenIdx + 1 : currenIdx - 1;

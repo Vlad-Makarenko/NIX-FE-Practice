@@ -6,7 +6,7 @@ import { useMessage } from "../hooks/message.hook";
 import "react-phone-number-input/style.css";
 import "../styles/Form.css";
 
-export const ItemForm = () => {
+export const SupportForm = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [name, setName] = useState("");
   const [comm, setComm] = useState("");
@@ -34,7 +34,7 @@ export const ItemForm = () => {
   };
 
   return (
-    <div className="ItemForm mt-4 d-flex flex-column align-items-center justify-content-center">
+    <div className="SupportForm mt-4 d-flex flex-column align-items-center justify-content-center">
       <Container className="d-flex flex-column align-items-center justify-content-center">
         <Row style={{ textAlign: "center" }}>
           <span className="formText">

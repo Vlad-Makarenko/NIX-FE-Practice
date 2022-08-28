@@ -6,7 +6,7 @@ import { Context } from "../index";
 import { ImgSlider } from "../components/Carousel";
 import { useParams } from "react-router-dom";
 import { ItemDescription } from "../components/ItemDescription";
-import { ItemForm } from "../components/ItemForm";
+import { SupportForm } from "../components/SupportForm";
 import { Recomendation } from "../components/Recomendation";
 
 export const ItemPage = observer(() => {
@@ -23,7 +23,7 @@ export const ItemPage = observer(() => {
 
   return (
     <>
-      <Container className="mt-4">
+      <Container className="mt-4 itemInfo">
         <Row>
           <Col className="d-flex flex-column justify-content-center" md={5}>
             <ImgSlider />
@@ -34,14 +34,18 @@ export const ItemPage = observer(() => {
             <p className="mt-2">{Categories.selectedItem.description}</p>
             <h5 className="mt-4">Ціна:</h5>
             <h4 className="mt-2">{Categories.selectedItem.price}</h4>
-            <Button className="mt-1" variant={"dark"}>
+            <Button
+              className="mt-1"
+              variant={"dark"}
+              onClick={() => Categories.setModalShow(true)}
+            >
               Замовити
             </Button>
           </Col>
         </Row>
         <ItemDescription />
       </Container>
-      <ItemForm />
+      <SupportForm />
       <Recomendation />
     </>
   );

@@ -31,3 +31,9 @@
   border-bottom: 1px solid black;
   padding: 0;
 }
+
+.crumbs {
+  text-decoration: none;
+  font-weight: bold;
+  color: #f39b14;
+}

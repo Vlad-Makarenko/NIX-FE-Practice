@@ -1,42 +1,20 @@
-import React, { useEffect, useState } from "react";
+import { observer } from "mobx-react-lite";
+import React, { useContext, useEffect, useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { Context } from "..";
+import { chooseImg } from "../utils/chooseImg";
 
-import cardImg1 from "../assets/item1.png";
-import cardImg2 from "../assets/item2.png";
-import cardImg3 from "../assets/item3.png";
-import cardImg4 from "../assets/item4.png";
-import cardImg5 from "../assets/item5.png";
-import cardImg6 from "../assets/item6.png";
 import "../styles/Item.css";
 
-export const ItemCard = ({ item }) => {
-  const [cardImg, setCardImg] = useState(cardImg1);
+export const ItemCard = observer(({ item }) => {
+  const [cardImg, setCardImg] = useState();
+  const { Categories } = useContext(Context);
+
   const history = useNavigate();
 
   useEffect(() => {
-    switch (item.id) {
-      case 1:
-        setCardImg(cardImg1);
-        break;
-      case 2:
-        setCardImg(cardImg2);
-        break;
-      case 3:
-        setCardImg(cardImg3);
-        break;
-      case 4:
-        setCardImg(cardImg4);
-        break;
-      case 5:
-        setCardImg(cardImg5);
-        break;
-      case 6:
-        setCardImg(cardImg6);
-        break;
-      default:
-        break;
-    }
+    chooseImg(item.id, setCardImg);
   }, [item.id]);
 
   const clickItemHandler = () => {
@@ -58,8 +36,13 @@ export const ItemCard = ({ item }) => {
         </Card.Title>
         <Card.Text>{item.description}</Card.Text>
         <Card.Title>Ціна від {item.price}</Card.Title>
-        <Button variant={"outline-dark"}>Замовити</Button>
+        <Button
+          variant={"outline-dark"}
+          onClick={() => Categories.setModalShow(true)}
+        >
+          Замовити
+        </Button>
       </Card.Body>
     </Card>
   );
-};
+});

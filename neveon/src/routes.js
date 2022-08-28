@@ -10,7 +10,7 @@ export const useRoutes = () => {
       <Route path="/" element={<Main />} exact />
       <Route path="/category" element={<Category />} exact />
       <Route path="/category/:id" element={<ItemPage />} exact />
-      <Route path="*" element={<Navigate to="/category" replace />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 };

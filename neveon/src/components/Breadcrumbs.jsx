@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 import { Context } from "../index";
 
 import crumbimg from "../assets/crumb.png";
+import "../styles/NavBar.css";
 
 export const Breadcrumbs = observer(() => {
   const { BreadCrumbs } = useContext(Context);
@@ -23,14 +24,7 @@ export const Breadcrumbs = observer(() => {
             </div>
           ) : (
             <div key={index}>
-              <NavLink
-                style={{
-                  textDecorationLine: "none",
-                  fontWeight: "bold",
-                  color: "#F39B14",
-                }}
-                to={crumb.to}
-              >
+              <NavLink className="crumbs" to={crumb.to}>
                 {crumb.name}
               </NavLink>
               <img

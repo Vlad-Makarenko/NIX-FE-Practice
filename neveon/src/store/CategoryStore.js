@@ -16,7 +16,7 @@ export class Category {
       {
         id: 1,
         category: "Меблевий поролон",
-        name: "Диван",
+        name: "Диван світлий",
         price: "3 250₴",
         description:
           "Як прийнято вважати, базові сценарії поведінки користувачів об'єктивно розглянуті відповідними інстанціями.",
@@ -24,7 +24,7 @@ export class Category {
       {
         id: 2,
         category: "Поролон для матраців",
-        name: "Диван",
+        name: "Диван білий",
         price: "2 999₴",
         description:
           "Загалом, звісно, обраний нами інноваційний шлях відіграє визначальне значення виведення поточних активів.",
@@ -66,6 +66,7 @@ export class Category {
     this._selectedItems = this._items;
     this._recomendedItems = this._items;
     this._selectedItem = {};
+    this._modalShow = false;
     makeAutoObservable(this);
   }
 
@@ -92,6 +93,10 @@ export class Category {
     this._recomendedItems = recomendedItems;
   }
 
+  setModalShow(show) {
+    this._modalShow = show;
+  }
+
   get categories() {
     return this._categories;
   }
@@ -114,5 +119,8 @@ export class Category {
 
   get recomendedItems() {
     return this._recomendedItems;
+  }
+  get modalShow() {
+    return this._modalShow;
   }
 }

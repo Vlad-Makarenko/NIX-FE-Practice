@@ -6,7 +6,7 @@ import location from "../assets/location.png";
 import handset from "../assets/handset.png";
 import "../styles/NavBar.css";
 
-export const Header = () => {
+export const Header = ({ setModal }) => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -39,7 +39,9 @@ export const Header = () => {
               <span style={{ fontSize: "13px" }}>Пн-Пт 09:00 - 21:00</span>
             </Nav.Item>
             <Nav.Item className="navIco">
-              <Button variant={"outline-dark"}>Залишити заявку</Button>
+              <Button variant={"outline-dark"} onClick={() => setModal(true)}>
+                Залишити заявку
+              </Button>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
