@@ -1,6 +1,9 @@
 <h1>Neveon</h1>
 
 <p>This project was completed as a term paper for NIX-FE practice</p>
+<h2>Demo</h2>
+<a href="https://Vlad-Makarenko.github.io/Neveon" target="_blank"> vlad-makarenko.github.io/Neveon </a>
+
 <h2>General Information</h2>
 
 The project was created according to the <a href="https://www.figma.com/file/2dgzDGiZSR7Q1S5VVMev98/Practice-Project-3" target="_blank"> given layout </a>
